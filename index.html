@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golden Bites — جولدن بايتس | ميني بايتس للأفراح والمناسبات</title>
+<meta name="description" content="جولدن بايتس — ميني برجر، ميني بيتزا، هوت دوج وساندوتشات فراخ للأفراح والمناسبات في القاهرة. للحجز واتساب 01026748725">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&amp;family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F1E3}
+a{color:#0F3D2E}a:hover{color:#7A5C14}
+.gb *{box-sizing:border-box}
+.gb h1,.gb h2,.gb h3{font-family:'El Messiri',serif;margin:0}
+
+/* ---------- keyframes ---------- */
+@keyframes gbRise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@keyframes gbFade{from{opacity:0}to{opacity:1}}
+@keyframes gbFloat{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-18px) rotate(calc(var(--r,0deg) + 4deg))}}
+@keyframes gbSpin{to{transform:rotate(360deg)}}
+@keyframes gbTwinkle{0%,100%{opacity:.15;transform:scale(.5) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+@keyframes gbShine{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes gbSweep{0%{transform:translateX(120%) skewX(-20deg)}60%,100%{transform:translateX(-220%) skewX(-20deg)}}
+@keyframes gbMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes gbPop{0%{opacity:0;transform:scale(.4) rotate(-12deg)}70%{transform:scale(1.08) rotate(3deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes gbPulse{0%{box-shadow:0 0 0 0 rgba(201,162,74,.55)}100%{box-shadow:0 0 0 22px rgba(201,162,74,0)}}
+@keyframes gbSkel{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+@keyframes gbDraw{from{stroke-dashoffset:400}to{stroke-dashoffset:0}}
+
+/* ---------- hero entrance ---------- */
+.gb-in{opacity:0;animation:gbRise .9s cubic-bezier(.2,.8,.2,1) forwards}
+.gb-d1{animation-delay:.1s}.gb-d2{animation-delay:.25s}.gb-d3{animation-delay:.4s}.gb-d4{animation-delay:.55s}.gb-d5{animation-delay:.7s}
+.gb-gold-text{background:linear-gradient(100deg,#C9A24A 20%,#F3DA92 40%,#C9A24A 60%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gbShine 4s linear infinite}
+
+/* ---------- hero visual ---------- */
+.gb-plate{position:absolute;inset:8%;border-radius:50%;border:2px dashed rgba(201,162,74,.6);animation:gbSpin 40s linear infinite}
+.gb-plate2{position:absolute;inset:18%;border-radius:50%;border:1px solid rgba(201,162,74,.35);animation:gbSpin 60s linear infinite reverse}
+.gb-bite{position:absolute;filter:drop-shadow(0 22px 22px rgba(0,0,0,.45));will-change:transform;animation:gbPop .9s cubic-bezier(.2,.8,.2,1) both, gbFloat 5s ease-in-out infinite}
+.gb-spark{position:absolute;animation:gbTwinkle 2.6s ease-in-out infinite}
+
+/* ---------- buttons ---------- */
+.gb-btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font-weight:800;font-size:17px;text-decoration:none;transition:transform .25s ease, box-shadow .25s ease}
+.gb-btn:hover{transform:translateY(-3px)}
+.gb-btn-gold{background:#C9A24A;color:#0F3D2E}
+.gb-btn-gold:hover{color:#0F3D2E;box-shadow:0 14px 30px rgba(201,162,74,.45)}
+.gb-btn-gold::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:0;background:rgba(255,255,255,.45);animation:gbSweep 3.2s ease-in-out infinite}
+.gb-btn-ghost{border:2px solid #C9A24A;color:#F7F1E3}
+.gb-btn-ghost:hover{color:#0F3D2E;background:#C9A24A}
+.gb-pulse{animation:gbPulse 1.8s ease-out infinite}
+
+/* ---------- cards ---------- */
+.gb-card{background:#FFFDF7;border:1px solid #E7DCC2;border-radius:28px;padding:28px;transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s}
+.gb-card:hover{transform:translateY(-10px) rotate(-.6deg);box-shadow:0 26px 50px rgba(15,61,46,.16);border-color:#C9A24A}
+.gb-card svg,.gb-card-img{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.gb-card:hover svg,.gb-card:hover .gb-card-img{transform:scale(1.12) rotate(-6deg)}
+.gb-card-img{height:130px;width:auto;max-width:100%;object-fit:contain;align-self:flex-start;filter:drop-shadow(0 12px 14px rgba(15,61,46,.25))}
+.gb-occ{transition:background .3s,color .3s,transform .3s}
+.gb-occ:hover{background:#C9A24A;color:#0F3D2E;transform:translateY(-6px)}
+.gb-tile{position:relative;overflow:hidden}
+.gb-line{stroke-dasharray:400;animation:gbDraw 2.4s ease forwards}
+
+
+@keyframes gbKen{from{transform:scale(1.02) translate(0,0)}to{transform:scale(1.14) translate(-2%,-1%)}}
+.gb-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:gbKen 22s ease-in-out infinite alternate}
+.gb-hero-shade{position:absolute;inset:0;background:linear-gradient(to left,rgba(10,46,34,.97) 0%,rgba(10,46,34,.88) 40%,rgba(10,46,34,.45) 100%)}
+@media(max-width:900px){.gb-hero-shade{background:rgba(10,46,34,.86)}}
+.gb-tile{position:relative;overflow:hidden;border-radius:24px;margin:0;background:#0F3D2E}
+.gb-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .8s}
+.gb-tile:hover img{transform:scale(1.08);filter:brightness(1.08)}
+.gb-tile figcaption{position:absolute;inset:auto 0 0 0;padding:40px 22px 18px;background:linear-gradient(to top,rgba(10,46,34,.92),transparent);color:#F7F1E3;font-family:'El Messiri',serif;font-size:22px;transform:translateY(10px);opacity:.92;transition:transform .4s,opacity .4s}
+.gb-tile:hover figcaption{transform:none;opacity:1}
+.gb-tile::before{content:"";position:absolute;inset:12px;border:1px solid rgba(201,162,74,0);border-radius:16px;z-index:2;transition:border-color .4s;pointer-events:none}
+.gb-tile:hover::before{border-color:rgba(201,162,74,.8)}
+.gb-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:280px;gap:18px}
+.gb-gallery .tall{grid-row:span 2}
+.gb-gallery .wide{grid-column:span 2}
+.gb-gallery .full{grid-column:1/-1;grid-row:span 2}
+.gb-gallery{grid-auto-flow:dense}
+@media(max-width:900px){.gb-gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:220px}}
+@media(max-width:600px){.gb-gallery{grid-template-columns:minmax(0,1fr)}.gb-gallery .tall,.gb-gallery .wide,.gb-gallery .full{grid-row:auto;grid-column:auto}}
+
+
+/* ---------- order form ---------- */
+.gb-order{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.gb-order-main{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.gb-order-side{flex:1 1 320px;min-width:0;position:sticky;top:96px}
+@media(max-width:900px){.gb-order-side{position:static}}
+.gb-panel{background:#FFFDF7;border:1px solid #E7DCC2;border-radius:28px;padding:28px}
+.gb-panel h3{font-size:26px;color:#0F3D2E;margin-bottom:18px}
+.gb-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.gb-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1.5px solid #E7DCC2;border-radius:18px;transition:border-color .3s,background .3s,transform .3s}
+.gb-item.has{border-color:#C9A24A;background:#FBF4E2}
+.gb-item.bump{animation:gbBump .45s ease}
+@keyframes gbBump{40%{transform:scale(1.04)}}
+.gb-item-name{font-weight:700;font-size:17px;color:#0F3D2E}
+.gb-item-unit{font-size:13px;color:#5E6B64}
+.gb-step{display:flex;align-items:center;gap:6px}
+.gb-step button{width:44px;height:44px;border-radius:50%;border:1.5px solid #0F3D2E;background:transparent;color:#0F3D2E;font-size:22px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.gb-step button:hover{background:#0F3D2E;color:#F7F1E3}
+.gb-step input{width:64px;height:44px;text-align:center;border:1.5px solid #E7DCC2;border-radius:12px;font:700 16px 'Tajawal',sans-serif;color:#0F3D2E;background:#fff}
+.gb-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media(max-width:600px){.gb-fields{grid-template-columns:minmax(0,1fr)}}
+.gb-field{display:flex;flex-direction:column;gap:6px}
+.gb-field.full{grid-column:1/-1}
+.gb-field label{font-weight:700;font-size:15px;color:#0F3D2E}
+.gb-field input,.gb-field select,.gb-field textarea{min-height:48px;padding:10px 14px;border:1.5px solid #E7DCC2;border-radius:14px;font:16px 'Tajawal',sans-serif;color:#16261F;background:#fff;width:100%}
+.gb-field textarea{min-height:96px;resize:vertical}
+.gb *:focus-visible{outline:3px solid #C9A24A;outline-offset:2px}
+.gb-field.bad input,.gb-field.bad select{border-color:#B3261E}
+.gb-err{color:#B3261E;font-size:13px;min-height:16px}
+.gb-chips{display:flex;flex-wrap:wrap;gap:10px}
+.gb-chip{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid #E7DCC2;background:#fff;font:700 15px 'Tajawal',sans-serif;color:#0F3D2E;cursor:pointer;transition:all .25s}
+.gb-chip[aria-pressed="true"]{background:#0F3D2E;color:#C9A24A;border-color:#0F3D2E}
+.gb-sum{background:#0F3D2E;color:#F7F1E3;border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:16px}
+.gb-sum h3{color:#C9A24A;font-size:26px}
+.gb-sum ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.gb-sum li{display:flex;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:1px dashed rgba(201,162,74,.35);animation:gbFade .4s}
+.gb-sum .empty{color:#AFC0B6;font-size:15px;line-height:1.7}
+.gb-total{display:flex;justify-content:space-between;align-items:baseline;font-weight:800}
+.gb-total b{font-family:'El Messiri',serif;font-size:34px;color:#C9A24A}
+.gb-send{justify-content:center;width:100%;font-size:18px;min-height:58px}
+.gb-send[aria-disabled="true"]{filter:saturate(.4);opacity:.75}
+.gb-note{font-size:13px;color:#AFC0B6;line-height:1.6;margin:0}
+.gb-addbtn{align-self:flex-start;min-height:44px;padding:0 20px;border-radius:999px;border:1.5px solid #C9A24A;background:transparent;color:inherit;font:800 15px 'Tajawal',sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .25s,color .25s,transform .25s;margin-top:auto}
+.gb-addbtn:hover{background:#C9A24A;color:#0F3D2E;transform:translateY(-2px)}
+.gb-toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:#0F3D2E;color:#F7F1E3;border:1px solid #C9A24A;padding:14px 22px;border-radius:999px;font-weight:700;z-index:50;transition:transform .4s cubic-bezier(.2,.8,.2,1);box-shadow:0 14px 30px rgba(0,0,0,.25)}
+.gb-toast.on{transform:translate(-50%,0)}
+
+/* ---------- marquee ---------- */
+.gb-track{display:flex;width:max-content;animation:gbMarquee 28s linear infinite}
+.gb-marquee:hover .gb-track{animation-play-state:paused}
+
+/* ---------- scroll reveal ---------- */
+.gb-rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.gb-rv.on{opacity:1;transform:none}
+html{scroll-behavior:smooth}
+header nav a:not(.gb-btn){position:relative}
+header nav a:not(.gb-btn)::after{content:"";position:absolute;right:0;bottom:-6px;height:2px;width:0;background:#C9A24A;transition:width .3s}
+header nav a:not(.gb-btn):hover::after{width:100%}
+
+/* ---------- motion off ---------- */
+.gb-still *,.gb-still *::after{animation:none !important;opacity:1}
+@media (prefers-reduced-motion: reduce){.gb *,.gb *::after{animation:none !important;opacity:1}.gb-rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+
+</head>
+<body>
+
+
+<div dir="rtl" class="gb " style="font-family: 'Tajawal', sans-serif; background: #F7F1E3; color: #16261F; overflow-x: hidden">
+
+<!-- ================= NAV ================= -->
+<header style="background: #0F3D2E; position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(201,162,74,.3)">
+  <nav style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px" aria-label="القائمة الرئيسية">
+    <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #F7F1E3">
+      <span style="width: 46px; height: 46px; border-radius: 50%; border: 2px solid #C9A24A; display: flex; align-items: center; justify-content: center; font-family: 'El Messiri', serif; font-weight: 700; color: #C9A24A; font-size: 20px">GB</span>
+      <span style="display: flex; flex-direction: column; line-height: 1.1">
+        <span style="font-family: 'El Messiri', serif; font-weight: 700; font-size: 21px; color: #F7F1E3">جولدن بايتس</span>
+        <span style="font-size: 12px; letter-spacing: 2px; color: #C9A24A" dir="ltr">GOLDEN BITES</span>
+      </span>
+    </a>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 26px; font-weight: 500">
+      <a href="#menu" style="color: #F7F1E3; text-decoration: none">المنيو</a>
+      <a href="#occasions" style="color: #F7F1E3; text-decoration: none">المناسبات</a>
+      <a href="#how" style="color: #F7F1E3; text-decoration: none">إزاي تطلب</a>
+      <a href="#gallery" style="color: #F7F1E3; text-decoration: none">من شغلنا</a>
+      <a href="#order" style="color: #F7F1E3; text-decoration: none">اطلب</a>
+      <a class="gb-btn gb-btn-gold" href="#order" style="min-height: 44px; padding: 0 20px; font-size: 15px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.2A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+        اطلب دلوقتي
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="top" style="background: #0F3D2E; color: #F7F1E3; position: relative; overflow: hidden">
+  <img class="gb-hero-bg" src="img/hero.jpg" alt="" aria-hidden="true">
+  <div class="gb-hero-shade"></div>
+  <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 80px 24px 110px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+    <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
+      <span class="gb-in gb-d1" style="align-self: flex-start; border: 1px solid rgba(201,162,74,.6); color: #E9CF86; border-radius: 999px; padding: 8px 18px; font-size: 15px; font-weight: 500">للأفراح والمناسبات فقط · القاهرة</span>
+      <h1 class="gb-in gb-d2" style="font-size: clamp(44px, 6vw, 82px); line-height: 1.15; font-weight: 700">
+        لقيمات <span class="gb-gold-text">ذهبية</span><br>تليق بأحلى ليلة
+      </h1>
+      <p class="gb-in gb-d3" style="margin: 0; font-size: 20px; line-height: 1.8; color: #D9E3DC; max-width: 540px">
+        ميني برجر، ميني بيتزا، هوت دوج وساندوتشات فراخ — بنجهزها طازة ونرصّها في بوكسات أنيقة بفيونكة، علشان ضيوفك يفتكروا الفرح من أول قضمة.
+      </p>
+      <div class="gb-in gb-d4" style="display: flex; flex-wrap: wrap; gap: 14px">
+        <a class="gb-btn gb-btn-gold gb-pulse" href="#order">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.2A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+          اطلب أونلاين
+        </a>
+        <a class="gb-btn gb-btn-ghost" href="#menu">شوف المنيو</a>
+      </div>
+      <div class="gb-in gb-d5" style="display: flex; flex-wrap: wrap; gap: 36px; padding-top: 10px">
+        <div style="display: flex; flex-direction: column"><span style="font-family: 'El Messiri', serif; font-size: 38px; font-weight: 700; color: #C9A24A" dir="ltr">69.9K</span><span style="color: #D9E3DC; font-size: 15px">متابع على إنستجرام</span></div>
+        <div style="display: flex; flex-direction: column"><span style="font-family: 'El Messiri', serif; font-size: 38px; font-weight: 700; color: #C9A24A">+6</span><span style="color: #D9E3DC; font-size: 15px">أصناف ميني</span></div>
+      </div>
+    </div>
+
+    <!-- animated plate of bites -->
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; justify-content: center">
+      <div id="gb-hero-plate" style="position: relative; width: min(100%, 520px); aspect-ratio: 1 / 1">
+        <div class="gb-plate"></div>
+        <div class="gb-plate2"></div>
+        <div style="position: absolute; inset: 26%; border-radius: 50%; background: rgba(21,75,57,.85); backdrop-filter: blur(4px); box-shadow: inset 0 0 60px rgba(0,0,0,.35)"></div>
+
+        <!-- burger (center) -->
+        <img class="gb-bite" src="img/burger.webp" alt="" aria-hidden="true" style="width: 40%; top: 30%; left: 30%; animation-delay: .5s, 1.4s; height: auto">
+
+        <!-- pizza -->
+        <img class="gb-bite" src="img/pizza.webp" alt="" aria-hidden="true" style="width: 26%; top: 4%; right: 8%; --r: 12deg; animation-delay: .7s, .2s; height: auto">
+
+        <!-- hot dog -->
+        <img class="gb-bite" src="img/hotdog.webp" alt="" aria-hidden="true" style="width: 34%; bottom: 6%; right: 4%; --r: -10deg; animation-delay: .9s, .8s; height: auto">
+
+        <!-- crispy chicken sandwich -->
+        <img class="gb-bite" src="img/chicken.webp" alt="" aria-hidden="true" style="width: 28%; top: 6%; left: 2%; --r: -14deg; animation-delay: 1.1s, 2s; height: auto">
+
+        <!-- gift box -->
+        <img class="gb-bite" src="img/box.webp" alt="" aria-hidden="true" style="width: 24%; bottom: 4%; left: 8%; --r: 8deg; animation-delay: 1.3s, 1.1s; height: auto">
+
+        <!-- sparkles -->
+        <svg class="gb-spark" viewBox="0 0 20 20" style="width: 26px; top: 6%; left: 40%; animation-delay: .2s" aria-hidden="true"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#E9CF86"></path></svg>
+        <svg class="gb-spark" viewBox="0 0 20 20" style="width: 18px; top: 48%; right: 0%; animation-delay: 1s" aria-hidden="true"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#E9CF86"></path></svg>
+        <svg class="gb-spark" viewBox="0 0 20 20" style="width: 22px; bottom: 30%; left: 2%; animation-delay: 1.7s" aria-hidden="true"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#E9CF86"></path></svg>
+        <svg class="gb-spark" viewBox="0 0 20 20" style="width: 14px; bottom: 2%; left: 48%; animation-delay: .6s" aria-hidden="true"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#E9CF86"></path></svg>
+        <svg class="gb-spark" viewBox="0 0 20 20" style="width: 16px; top: 30%; right: 30%; animation-delay: 2.2s" aria-hidden="true"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#E9CF86"></path></svg>
+      </div>
+    </div>
+  </div>
+  <!-- scalloped edge -->
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display: block; width: 100%; height: 50px; position: absolute; bottom: -1px; left: 0" aria-hidden="true"><path d="M0 60V30Q60 0 120 30T240 30T360 30T480 30T600 30T720 30T840 30T960 30T1080 30T1200 30T1320 30T1440 30V60Z" fill="#C9A24A"></path></svg>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="gb-marquee" style="background: #C9A24A; color: #0F3D2E; overflow: hidden; padding: 16px 0" dir="ltr">
+  <div class="gb-track" style="font-family: 'El Messiri', serif; font-weight: 700; font-size: 24px; gap: 0">
+    <span style="white-space: nowrap; padding-inline: 20px" dir="rtl">ميني برجر ✦ ميني بيتزا ✦ هوت دوج ✦ ساندوتش فراخ كرسبي ✦ معجنات ✦ بوكسات بفيونكة ✦ ميني برجر ✦ ميني بيتزا ✦ هوت دوج ✦ ساندوتش فراخ كرسبي ✦ معجنات ✦ بوكسات بفيونكة ✦</span>
+    <span style="white-space: nowrap; padding-inline: 20px" dir="rtl" aria-hidden="true">ميني برجر ✦ ميني بيتزا ✦ هوت دوج ✦ ساندوتش فراخ كرسبي ✦ معجنات ✦ بوكسات بفيونكة ✦ ميني برجر ✦ ميني بيتزا ✦ هوت دوج ✦ ساندوتش فراخ كرسبي ✦ معجنات ✦ بوكسات بفيونكة ✦</span>
+  </div>
+</div>
+
+<!-- ================= MENU ================= -->
+<section id="menu" style="max-width: 1240px; margin: 0 auto; padding: 110px 24px 90px">
+  <div class="gb-rv" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; margin-bottom: 56px">
+    <span style="color: #7A5C14; font-weight: 800; letter-spacing: 1px">المنيو</span>
+    <h2 style="font-size: clamp(34px, 4.5vw, 56px); color: #0F3D2E">قضمة صغيرة… طعم كبير</h2>
+    <p style="margin: 0; font-size: 18px; color: #4A5A52; max-width: 560px; line-height: 1.8">كل الأصناف بحجم ميني، مناسبة للبوفيه وبوكسات الضيوف. الأسعار حسب العدد والمناسبة — اسألنا على واتساب.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px">
+    <article class="gb-card gb-rv" style="display: flex; flex-direction: column; gap: 14px">
+      <img class="gb-card-img" src="img/burger.webp" alt="ميني برجر" loading="lazy">
+      <h3 style="font-size: 26px; color: #0F3D2E">ميني برجر</h3>
+      <p style="margin: 0; color: #4A5A52; line-height: 1.7">عيش بريوش بالسمسم، لحمة مشوية، شيدر وخس فريش.</p>
+      <button type="button" class="gb-addbtn" data-add="burger"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>أضف للطلب</button>
+    </article>
+    <article class="gb-card gb-rv" style="display: flex; flex-direction: column; gap: 14px">
+      <img class="gb-card-img" src="img/chicken.webp" alt="ساندوتش فراخ كرسبي" loading="lazy">
+      <h3 style="font-size: 26px; color: #0F3D2E">ساندوتش فراخ كرسبي</h3>
+      <p style="margin: 0; color: #4A5A52; line-height: 1.7">فيليه فراخ مقرمش في عيش طري مع صوص وخس.</p>
+      <button type="button" class="gb-addbtn" data-add="chicken"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>أضف للطلب</button>
+    </article>
+    <article class="gb-card gb-rv" style="display: flex; flex-direction: column; gap: 14px">
+      <img class="gb-card-img" src="img/pizza.webp" alt="ميني بيتزا" loading="lazy">
+      <h3 style="font-size: 26px; color: #0F3D2E">ميني بيتزا</h3>
+      <p style="margin: 0; color: #4A5A52; line-height: 1.7">عجينة هشة، صوص طماطم، موتزاريلا وبيبروني.</p>
+      <button type="button" class="gb-addbtn" data-add="pizza"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>أضف للطلب</button>
+    </article>
+    <article class="gb-card gb-rv" style="display: flex; flex-direction: column; gap: 14px">
+      <img class="gb-card-img" src="img/hotdog.webp" alt="هوت دوج" loading="lazy">
+      <h3 style="font-size: 26px; color: #0F3D2E">هوت دوج</h3>
+      <p style="margin: 0; color: #4A5A52; line-height: 1.7">سجق في عيش طري مع مستردة وصوصات.</p>
+      <button type="button" class="gb-addbtn" data-add="hotdog"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>أضف للطلب</button>
+    </article>
+    <article class="gb-card gb-rv" style="display: flex; flex-direction: column; gap: 14px">
+      <img class="gb-card-img" src="img/pastry.webp" alt="معجنات" loading="lazy">
+      <h3 style="font-size: 26px; color: #0F3D2E">معجنات</h3>
+      <p style="margin: 0; color: #4A5A52; line-height: 1.7">تشكيلة معجنات ساخنة تكمّل البوفيه.</p>
+      <button type="button" class="gb-addbtn" data-add="pastry"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>أضف للطلب</button>
+    </article>
+    <article class="gb-card gb-rv" style="display: flex; flex-direction: column; gap: 14px; background: #0F3D2E; border-color: #0F3D2E; color: #F7F1E3">
+      <img class="gb-card-img" src="img/box.webp" alt="بوكسات الضيوف" loading="lazy">
+      <h3 style="font-size: 26px; color: #C9A24A">بوكسات الضيوف</h3>
+      <p style="margin: 0; color: #D9E3DC; line-height: 1.7">بوكس لكل ضيف بتشكيلة الأصناف، مقفول بفيونكة — جاهز يتوزع في الفرح.</p>
+      <button type="button" class="gb-addbtn" data-add="box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>أضف للطلب</button>
+    </article>
+  </div>
+</section>
+
+<!-- ================= OCCASIONS ================= -->
+<section id="occasions" style="background: #0F3D2E; color: #F7F1E3; padding: 100px 24px">
+  <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+    <div class="gb-rv" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
+      <span style="color: #C9A24A; font-weight: 800; letter-spacing: 1px">مناسباتك</span>
+      <h2 style="font-size: clamp(34px, 4.5vw, 56px)">إحنا متخصصين في الفرحة</h2>
+      <svg viewBox="0 0 300 20" width="240" height="18" aria-hidden="true"><path class="gb-line" d="M2 10Q40 0 75 10T150 10T225 10T298 10" fill="none" stroke="#C9A24A" stroke-width="2.5" stroke-linecap="round"></path></svg>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+      <div class="gb-occ gb-rv" style="border: 1px solid rgba(201,162,74,.5); border-radius: 24px; padding: 34px 26px; display: flex; flex-direction: column; gap: 12px">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="14" r="5"></circle><circle cx="15" cy="14" r="5"></circle><path d="M9 9l1.5-4h3L15 9"></path></svg>
+        <h3 style="font-size: 26px">أفراح</h3><p style="margin: 0; line-height: 1.7; opacity: .85">بوفيه ميني وبوكسات لكل المعازيم.</p>
+      </div>
+      <div class="gb-occ gb-rv" style="border: 1px solid rgba(201,162,74,.5); border-radius: 24px; padding: 34px 26px; display: flex; flex-direction: column; gap: 12px">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5 5 0 0 1 12 6a5 5 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"></path></svg>
+        <h3 style="font-size: 26px">خطوبة</h3><p style="margin: 0; line-height: 1.7; opacity: .85">ضيافة شيك تناسب ليلة الدبل.</p>
+      </div>
+      <div class="gb-occ gb-rv" style="border: 1px solid rgba(201,162,74,.5); border-radius: 24px; padding: 34px 26px; display: flex; flex-direction: column; gap: 12px">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"></path><path d="M8 9h8M8 13h6"></path></svg>
+        <h3 style="font-size: 26px">كتب كتاب</h3><p style="margin: 0; line-height: 1.7; opacity: .85">بوكسات مرتبة تتوزع بعد العقد.</p>
+      </div>
+      <div class="gb-occ gb-rv" style="border: 1px solid rgba(201,162,74,.5); border-radius: 24px; padding: 34px 26px; display: flex; flex-direction: column; gap: 12px">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21h14M6 21V11h12v10M12 11V7"></path><path d="M12 3c1 1.2 1 2.4 0 4c-1-1.6-1-2.8 0-4z"></path></svg>
+        <h3 style="font-size: 26px">مناسبات خاصة</h3><p style="margin: 0; line-height: 1.7; opacity: .85">أعياد ميلاد وتجمعات عائلية كبيرة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW TO ORDER ================= -->
+<section id="how" style="max-width: 1240px; margin: 0 auto; padding: 110px 24px">
+  <div class="gb-rv" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; margin-bottom: 56px">
+    <span style="color: #7A5C14; font-weight: 800; letter-spacing: 1px">إزاي تطلب</span>
+    <h2 style="font-size: clamp(34px, 4.5vw, 56px); color: #0F3D2E">3 خطوات وبس</h2>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px">
+    <div class="gb-rv" style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start">
+      <span style="width: 72px; height: 72px; border-radius: 50%; background: #0F3D2E; color: #C9A24A; display: flex; align-items: center; justify-content: center; font-family: 'El Messiri', serif; font-size: 34px; font-weight: 700">١</span>
+      <h3 style="font-size: 26px; color: #0F3D2E">ابعتلنا على واتساب</h3>
+      <p style="margin: 0; color: #4A5A52; line-height: 1.8">قولنا نوع المناسبة، الميعاد، وعدد الضيوف.</p>
+    </div>
+    <div class="gb-rv" style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start">
+      <span style="width: 72px; height: 72px; border-radius: 50%; background: #0F3D2E; color: #C9A24A; display: flex; align-items: center; justify-content: center; font-family: 'El Messiri', serif; font-size: 34px; font-weight: 700">٢</span>
+      <h3 style="font-size: 26px; color: #0F3D2E">اختار التشكيلة</h3>
+      <p style="margin: 0; color: #4A5A52; line-height: 1.8">نساعدك تختار الأصناف وشكل البوكسات وتأكد الحجز.</p>
+    </div>
+    <div class="gb-rv" style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start">
+      <span style="width: 72px; height: 72px; border-radius: 50%; background: #C9A24A; color: #0F3D2E; display: flex; align-items: center; justify-content: center; font-family: 'El Messiri', serif; font-size: 34px; font-weight: 700">٣</span>
+      <h3 style="font-size: 26px; color: #0F3D2E">طلبك جاهز يوم الفرح</h3>
+      <p style="margin: 0; color: #4A5A52; line-height: 1.8">نجهز كل حاجة طازة ومرصوصة في بوكسات بفيونكة.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ORDER ================= -->
+<section id="order" style="background: #EFE6CF; padding: 100px 24px">
+  <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px">
+    <div class="gb-rv" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
+      <span style="color: #7A5C14; font-weight: 800; letter-spacing: 1px">اطلب أونلاين</span>
+      <h2 style="font-size: clamp(34px, 4.5vw, 56px); color: #0F3D2E">جهّز طلبك في دقيقة</h2>
+      <p style="margin: 0; font-size: 18px; color: #4A5A52; max-width: 600px; line-height: 1.8">اختار الأصناف والكميات واكتب بيانات المناسبة — وبضغطة واحدة الطلب كله يتبعت لنا على واتساب ونرد عليك بالسعر وتأكيد الحجز.</p>
+    </div>
+
+    <form id="gbForm" class="gb-order" novalidate>
+      <div class="gb-order-main">
+        <div class="gb-panel gb-rv">
+          <h3>١. الأصناف والكميات</h3>
+          <div class="gb-items" id="gbItems"></div>
+          <p class="gb-err" id="errItems" role="alert"></p>
+        </div>
+
+        <div class="gb-panel gb-rv">
+          <h3>٢. نوع المناسبة</h3>
+          <div class="gb-chips" id="gbEvent" role="group" aria-label="نوع المناسبة">
+            <button type="button" class="gb-chip" aria-pressed="true" data-v="فرح">فرح</button>
+            <button type="button" class="gb-chip" aria-pressed="false" data-v="خطوبة">خطوبة</button>
+            <button type="button" class="gb-chip" aria-pressed="false" data-v="كتب كتاب">كتب كتاب</button>
+            <button type="button" class="gb-chip" aria-pressed="false" data-v="عيد ميلاد">عيد ميلاد</button>
+            <button type="button" class="gb-chip" aria-pressed="false" data-v="مناسبة أخرى">مناسبة أخرى</button>
+          </div>
+        </div>
+
+        <div class="gb-panel gb-rv">
+          <h3>٣. بياناتك</h3>
+          <div class="gb-fields">
+            <div class="gb-field"><label for="fName">الاسم *</label><input id="fName" name="name" autocomplete="name" required><span class="gb-err"></span></div>
+            <div class="gb-field"><label for="fPhone">رقم الموبايل *</label><input id="fPhone" name="phone" type="tel" inputmode="tel" dir="ltr" placeholder="01xxxxxxxxx" autocomplete="tel" required><span class="gb-err"></span></div>
+            <div class="gb-field"><label for="fDate">تاريخ المناسبة *</label><input id="fDate" name="date" type="date" required><span class="gb-err"></span></div>
+            <div class="gb-field"><label for="fGuests">عدد الضيوف تقريبًا</label><input id="fGuests" name="guests" type="number" min="1" inputmode="numeric"><span class="gb-err"></span></div>
+            <div class="gb-field full"><label for="fArea">المنطقة / مكان المناسبة</label><input id="fArea" name="area" placeholder="مثال: مدينة نصر — قاعة …"><span class="gb-err"></span></div>
+            <div class="gb-field full"><label for="fNotes">ملاحظات</label><textarea id="fNotes" name="notes" placeholder="لون الفيونكة، صوصات معينة، ميعاد الاستلام…"></textarea></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="gb-order-side">
+        <div class="gb-sum">
+          <h3>ملخص طلبك</h3>
+          <ul id="gbSum"></ul>
+          <div class="gb-total"><span>إجمالي القطع</span><b id="gbTotal">0</b></div>
+          <a id="gbSend" class="gb-btn gb-btn-gold gb-send" href="https://wa.me/201026748725" target="_blank" rel="noopener" aria-disabled="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.2A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+            ابعت الطلب على واتساب
+          </a>
+          <p class="gb-note">هيفتح واتساب برسالة جاهزة فيها كل التفاصيل — اضغط إرسال بس. الأسعار والتأكيد بيوصلوك في الرد.</p>
+          <button type="button" id="gbClear" class="gb-chip" style="background: transparent; color: #E9CF86; border-color: rgba(201,162,74,.5)">مسح الطلب</button>
+        </div>
+      </aside>
+    </form>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" style="background: #EFE6CF; padding: 100px 24px">
+  <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px">
+    <div class="gb-rv" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span style="color: #7A5C14; font-weight: 800; letter-spacing: 1px">من شغلنا</span>
+        <h2 style="font-size: clamp(34px, 4.5vw, 56px); color: #0F3D2E">كل بوكس حكاية</h2>
+      </div>
+      <a class="gb-btn" href="https://www.instagram.com/goldenbites.t.n/" style="background: #0F3D2E; color: #F7F1E3">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg>
+        تابعنا على إنستجرام
+      </a>
+    </div>
+    <div class="gb-gallery">
+      <figure class="gb-tile gb-rv tall"><img src="img/burger.jpg" alt="ميني برجر بالشيدر في بوكس جولدن بايتس" loading="lazy" style="object-position: 55% 50%"><figcaption>ميني برجر</figcaption></figure>
+      <figure class="gb-tile gb-rv wide"><img src="img/boxes.jpg" alt="بوكسات ضيوف بيضا بفيونكة حمرا" loading="lazy"><figcaption>بوكسات الضيوف بالفيونكة</figcaption></figure>
+      <figure class="gb-tile gb-rv"><img src="img/pizza.jpg" alt="ميني بيتزا على لوح خشب" loading="lazy"><figcaption>ميني بيتزا</figcaption></figure>
+      <figure class="gb-tile gb-rv"><img src="img/chicken.jpg" alt="ساندوتش فراخ كرسبي" loading="lazy" style="object-position: 60% 40%"><figcaption>فراخ كرسبي</figcaption></figure>
+      <figure class="gb-tile gb-rv full" style="height: 100%"><img src="img/buffet.jpg" alt="بوفيه ميني بايتس في فرح" loading="lazy" style="object-position: 50% 55%"><figcaption>بوفيه الفرح</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section style="background: #0F3D2E; color: #F7F1E3; padding: 110px 24px; position: relative; overflow: hidden">
+  <svg class="gb-spark" viewBox="0 0 20 20" style="width: 30px; top: 18%; right: 12%; animation-delay: .3s" aria-hidden="true"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#E9CF86"></path></svg>
+  <svg class="gb-spark" viewBox="0 0 20 20" style="width: 22px; bottom: 20%; left: 14%; animation-delay: 1.2s" aria-hidden="true"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#E9CF86"></path></svg>
+  <svg class="gb-spark" viewBox="0 0 20 20" style="width: 18px; top: 30%; left: 28%; animation-delay: 2s" aria-hidden="true"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#E9CF86"></path></svg>
+  <div class="gb-rv" style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
+    <h2 style="font-size: clamp(36px, 5vw, 64px); line-height: 1.25">فرحك قرّب؟ <span class="gb-gold-text">احجز ميعادك</span></h2>
+    <p style="margin: 0; font-size: 19px; color: #D9E3DC; line-height: 1.8">المواعيد بتتحجز بدري في موسم الأفراح. ابعتلنا دلوقتي ونرد عليك بالتشكيلات والأسعار.</p>
+    <a class="gb-btn gb-btn-gold gb-pulse" href="https://wa.me/201026748725" style="font-size: 20px; min-height: 60px; padding: 0 36px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.2A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+      <span dir="ltr">01026748725</span>
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer style="background: #0A2E22; color: #D9E3DC; padding: 36px 24px">
+  <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; font-size: 15px">
+    <span><span style="font-family: 'El Messiri', serif; color: #C9A24A; font-size: 19px">جولدن بايتس</span> · للأفراح والمناسبات · القاهرة</span>
+    <div style="display: flex; flex-wrap: wrap; gap: 22px">
+      <a href="https://wa.me/201026748725" style="color: #E9CF86">واتساب</a>
+      <a href="https://www.instagram.com/goldenbites.t.n/" style="color: #E9CF86">إنستجرام</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.gb-rv'));
+  function show(el,i){setTimeout(function(){el.classList.add('on')},(i%4)*120)}
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return;}
+  var io=new IntersectionObserver(function(entries){
+    var n=0;entries.forEach(function(en){if(en.isIntersecting){show(en.target,n++);io.unobserve(en.target);}});
+  },{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+  // gentle parallax on the hero plate
+  var plate=document.getElementById('gb-hero-plate');
+  if(plate&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    window.addEventListener('scroll',function(){var y=window.scrollY;if(y<900)plate.style.transform='translateY('+(y*0.12)+'px)';},{passive:true});
+  }
+})();
+</script>
+<div class="gb-toast" id="gbToast" role="status" aria-live="polite"></div>
+<script>
+{
+  const WA='201026748725';
+  const ITEMS=[
+    {id:'burger',name:'ميني برجر',unit:'قطعة'},
+    {id:'chicken',name:'ساندوتش فراخ كرسبي',unit:'قطعة'},
+    {id:'pizza',name:'ميني بيتزا',unit:'قطعة'},
+    {id:'hotdog',name:'هوت دوج',unit:'قطعة'},
+    {id:'pastry',name:'معجنات',unit:'قطعة'},
+    {id:'box',name:'بوكسات الضيوف',unit:'بوكس'}
+  ];
+  const STEP=10;
+  const qty={};ITEMS.forEach(i=>qty[i.id]=0);
+  let eventType='فرح';
+  const $=id=>document.getElementById(id);
+  const itemsEl=$('gbItems'),sumEl=$('gbSum'),totalEl=$('gbTotal'),send=$('gbSend'),toast=$('gbToast');
+  const f={name:$('fName'),phone:$('fPhone'),date:$('fDate'),guests:$('fGuests'),area:$('fArea'),notes:$('fNotes')};
+
+  itemsEl.innerHTML=ITEMS.map(i=>`<div class="gb-item" id="it-${i.id}">
+      <div style="display:flex;flex-direction:column"><span class="gb-item-name">${i.name}</span><span class="gb-item-unit">بالـ${i.unit}</span></div>
+      <div class="gb-step">
+        <button type="button" data-dec="${i.id}" aria-label="قلّل ${i.name}">−</button>
+        <input id="q-${i.id}" type="number" min="0" inputmode="numeric" value="0" aria-label="كمية ${i.name}">
+        <button type="button" data-inc="${i.id}" aria-label="زوّد ${i.name}">+</button>
+      </div></div>`).join('');
+
+  // date: no past dates
+  const t=new Date();t.setMinutes(t.getMinutes()-t.getTimezoneOffset());f.date.min=t.toISOString().slice(0,10);
+
+  function save(){try{localStorage.setItem('gbOrder',JSON.stringify({qty,eventType,v:Object.fromEntries(Object.entries(f).map(([k,e])=>[k,e.value]))}))}catch(e){}}
+  function load(){try{const s=JSON.parse(localStorage.getItem('gbOrder')||'null');if(!s)return;Object.assign(qty,s.qty||{});eventType=s.eventType||eventType;for(const k in (s.v||{}))if(f[k])f[k].value=s.v[k];}catch(e){}}
+
+  function setQty(id,n,bump){
+    qty[id]=Math.max(0,Math.min(5000,Math.round(+n||0)));
+    $('q-'+id).value=qty[id];
+    const row=$('it-'+id);row.classList.toggle('has',qty[id]>0);
+    if(bump){row.classList.remove('bump');void row.offsetWidth;row.classList.add('bump');}
+    render();
+  }
+
+  function message(){
+    const lines=['السلام عليكم، طلب جديد من موقع جولدن بايتس:','',
+      '• الاسم: '+f.name.value.trim(),
+      '• الموبايل: '+f.phone.value.trim(),
+      '• المناسبة: '+eventType,
+      '• التاريخ: '+f.date.value];
+    if(f.guests.value)lines.push('• عدد الضيوف: '+f.guests.value);
+    if(f.area.value.trim())lines.push('• المكان: '+f.area.value.trim());
+    lines.push('','الأصناف:');
+    ITEMS.filter(i=>qty[i.id]>0).forEach(i=>lines.push(`- ${i.name} × ${qty[i.id]} ${i.unit}`));
+    lines.push('إجمالي القطع: '+total());
+    if(f.notes.value.trim())lines.push('','ملاحظات: '+f.notes.value.trim());
+    lines.push('','برجاء إرسال السعر وتأكيد الحجز. شكرًا!');
+    return lines.join('\n');
+  }
+  const total=()=>ITEMS.reduce((a,i)=>a+qty[i.id],0);
+
+  function errors(){
+    const e={};
+    if(!f.name.value.trim())e.name='اكتب اسمك';
+    const ph=f.phone.value.replace(/[\s-]/g,'');
+    if(!/^(\+?20)?0?1[0125]\d{8}$/.test(ph))e.phone='اكتب رقم موبايل مصري صحيح';
+    if(!f.date.value)e.date='اختار تاريخ المناسبة';
+    else if(f.date.value<f.date.min)e.date='التاريخ لازم يكون جاي';
+    if(!total())e.items='اختار صنف واحد على الأقل';
+    return e;
+  }
+  function showErrors(e){
+    ['name','phone','date'].forEach(k=>{const box=f[k].closest('.gb-field');box.classList.toggle('bad',!!e[k]);box.querySelector('.gb-err').textContent=e[k]||'';});
+    $('errItems').textContent=e.items||'';
+  }
+
+  function render(){
+    const chosen=ITEMS.filter(i=>qty[i.id]>0);
+    sumEl.innerHTML=chosen.length?chosen.map(i=>`<li><span>${i.name}</span><span>× ${qty[i.id]}</span></li>`).join(''):'<li class="empty" style="border:0">لسه ما اخترتش أصناف — دوس + جنب الصنف اللي عايزه.</li>';
+    totalEl.textContent=total();
+    const ok=!Object.keys(errors()).length;
+    send.setAttribute('aria-disabled',ok?'false':'true');
+    send.href='https://wa.me/'+WA+'?text='+encodeURIComponent(message());
+    save();
+  }
+
+  function flash(t){toast.textContent=t;toast.classList.add('on');clearTimeout(flash.h);flash.h=setTimeout(()=>toast.classList.remove('on'),2200);}
+
+  itemsEl.addEventListener('click',ev=>{
+    const b=ev.target.closest('button');if(!b)return;
+    if(b.dataset.inc)setQty(b.dataset.inc,qty[b.dataset.inc]+STEP,true);
+    if(b.dataset.dec)setQty(b.dataset.dec,qty[b.dataset.dec]-STEP,true);
+  });
+  itemsEl.addEventListener('input',ev=>{const id=ev.target.id.replace('q-','');if(qty[id]!==undefined)setQty(id,ev.target.value);});
+
+  document.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>{
+    const id=b.dataset.add;setQty(id,qty[id]+STEP,true);
+    const it=ITEMS.find(i=>i.id===id);flash(`اتضاف ${STEP} ${it.name} لطلبك`);
+  }));
+
+  const chips=[...document.querySelectorAll('#gbEvent .gb-chip')];
+  chips.forEach(c=>c.addEventListener('click',()=>{eventType=c.dataset.v;chips.forEach(x=>x.setAttribute('aria-pressed',x===c?'true':'false'));render();}));
+
+  Object.values(f).forEach(el=>el.addEventListener('input',()=>{render();if(el.closest('.gb-field').classList.contains('bad'))showErrors(errors());}));
+
+  send.addEventListener('click',ev=>{
+    render();const e=errors();
+    if(Object.keys(e).length){ev.preventDefault();showErrors(e);
+      const first=e.items?itemsEl:f[Object.keys(e)[0]];first.scrollIntoView({behavior:'smooth',block:'center'});if(first.focus&&!e.items)first.focus({preventScroll:true});
+      flash('كمّل البيانات الناقصة الأول');return;}
+    showErrors({});flash('بيفتح واتساب… اضغط إرسال');
+  });
+
+  $('gbClear').addEventListener('click',()=>{ITEMS.forEach(i=>setQty(i.id,0));Object.values(f).forEach(e=>e.value='');showErrors({});flash('اتمسح الطلب');});
+  $('gbForm').addEventListener('submit',e=>e.preventDefault());
+
+  load();chips.forEach(x=>x.setAttribute('aria-pressed',x.dataset.v===eventType?'true':'false'));
+  ITEMS.forEach(i=>setQty(i.id,qty[i.id]));render();
+}
+</script>
+</body>
+</html>
